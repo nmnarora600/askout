@@ -23,13 +23,15 @@
                     }
                     
                     function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85; //84
+                        var x = Math.random() * (window.innerWidth- (document.getElementById('noButton').offsetWidth *2)) ; //84
                         var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
                         Headvalue=(Headvalue+1)%9;
                         if(y<0)
                         y=0;
-                   
-                       
+           
+                if(x<0 || x>(window.innerWidth- (document.getElementById('noButton').offsetWidth *3))){
+                    x=0;
+                }
                         document.getElementById('headText').innerText=textarray[Headvalue]
                     
                         document.getElementById('noButton').style.left = `${x}px`;
